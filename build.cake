@@ -32,6 +32,7 @@ Teardown(ctx =>{
         Information("Finished running tasks.");
     });
 
+//Comment step who are not needed
 Task("Default")
     .IsDependentOn("Build")
     .IsDependentOn("ExecuteTests")
@@ -90,7 +91,11 @@ Task("VersionCsProj")
     }).OnError(err => {      
         throw err;
     });
-
+    //add this to .csproj and do a first commit before building
+    // <Product>AppName</Product>   
+    // <FileVersion>0.1.0.0</FileVersion>
+    // <Version>0.1.0</Version>  
+    // <PackageVersion>00000</PackageVersion> 
 
 
 Task("Restore")   
